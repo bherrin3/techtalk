@@ -1,0 +1,18 @@
+- /etc/sysconfig/network-scripts
+- iptables / iptables6
+	- iptables -L
+	- ip6tables -L
+	- Replacement: nftables
+		- Reference: https://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables
+	- How to add a rule (example)
+	- iptables
+		- '# allow inbound ssh connections'
+		  iptables -t filter -A INPUT -p tcp --dport 22 -j ACCEPT
+	 - nft (There are fun issues here, so skipping in this meeting)
+		 - nft add rule ip filter inport tcp dport 22 --debug=netlink
+- netmasks / CIDR notation
+	- network calculator
+	- https://www.calculator.net/ip-subnet-calculator.html
+- RHOS Network Security Groups
+	- https://dashboard.rhos-01.prod.psi.rdu2.redhat.com/dashboard/project/security_groups/
+	- ![[Pasted image 20240411125329.png]]
